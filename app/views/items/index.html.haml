@@ -1,0 +1,20 @@
+.furima-item
+  .furima-item__input-form
+    = form_for @item do |f|
+      = render 'layouts/error_messages', model: f.object
+      .furima-item__input-form__image
+        %label.image-title
+          出品画像
+          %span.image-title__must
+            必須
+        .furima-item__input-form__image-fhoto
+          ファイルを選択をクリックでアップロードできます
+          .furima-item__input-form__image-fhoto__box
+            .img-box-form
+              - if @item.persisted?
+                - @item.images.each_with_index do |image, i|
+                  .img-preview
+                    - if image.persisted?
+                      = image_tag image.src.url, data: { index: i }, width: "120", height: '150'
+                      .js-move
+  
