@@ -223,3 +223,43 @@ select{
     text-align: right;
   }
 }
+
+.products_new-product_price--displayflex{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.products_new-product_price--select{
+  align-items:center;
+  display: flex;
+  width: 100%;
+  .products_new-product_price--yen{
+    font-size: 12px;
+    padding-right: 10px;
+  }
+}
+
+.products_new-boolean{
+  display: none;
+}
+
+.products_new-product__submit{
+  &--btn{
+    height: 50px;
+    width: 50%;
+    background-color: red;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.products_new-footer{
+  height: 50px;
+  width: 100%;
+  background-color: #f8f8f8;
+}
