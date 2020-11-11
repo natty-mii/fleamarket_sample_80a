@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2],
          password_length: 7..128
 
+  has_many :sns_credentials
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :birth_year
   validates :birth_year_id, numericality: { other_than: 0 }

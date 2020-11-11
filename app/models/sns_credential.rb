@@ -1,3 +1,3 @@
 class SnsCredential < ApplicationRecord
-  belongs_to :user, optinal: true
+  belongs_to :user, optional: true
 end
