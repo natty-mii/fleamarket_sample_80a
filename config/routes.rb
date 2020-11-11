@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-    resgistration: 'users/registrations'
+    resgistration: 'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
   devise_scope :user do
     get 'registrations', to: 'users/registrations#create_users'
