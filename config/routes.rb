@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     resgistrations: 'users/registrations'
   }
   devise_scope :user do
-    post 'registrations', to: 'users/registrations#create_users'
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end

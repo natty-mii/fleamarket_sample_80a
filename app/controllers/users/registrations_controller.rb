@@ -10,16 +10,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  def create
-    if params[:sns_auth] == 'true'
-      pass = Devise.friendly_token
-      params[:user][:password] = pass
-      params[:user][:password_confirmation] = pass
-    end
-    super
-  end
+  # def create
+  #   if params[:sns_auth] == 'true'
+  #     pass = Devise.friendly_token
+  #     params[:user][:password] = pass
+  #     params[:user][:password_confirmation] = pass
+  #   end
+  #   super
+  # end
 
-  def create_users
+  def create
 
     @user = User.new(sign_up_params) #登録1ページ目から送られてきたパラメータを@userに代入
     unless @user.valid? #validメソッドを使ってバリデーションチェック
@@ -104,9 +104,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super
-  # end
+  def after_sign_up_path_for(resource)
+    addresses_path(resource)
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
