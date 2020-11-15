@@ -27,6 +27,9 @@ class User < ApplicationRecord
   format: { with: /\A([ァ-ン]|ー)+\z/, message: 'を全角カタカナで入力してください' }
   validates :last_name_kana,
   format: { with: /\A([ァ-ン]|ー)+\z/, message: 'を全角カタカナで入力してください' }
+  validates :email,
+  format: { with: /\A[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*\z/, message: '有効なメールアドレスを入力してください。' }
+
   has_one :address
   has_one :card
   has_many :items

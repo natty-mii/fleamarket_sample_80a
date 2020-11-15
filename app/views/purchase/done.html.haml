@@ -16,5 +16,5 @@
         .purchase-done-return-btn
           = link_to "トップページへ", root_path
         .purchase-done-return-btn
-          = link_to "マイページへ", '/users/:id', method: :getm
+          = link_to "マイページへ", user_path, method: :get
 = render "shared/footer-sub"
