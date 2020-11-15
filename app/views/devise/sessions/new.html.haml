@@ -12,9 +12,8 @@
           = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post, class: 'btn-blue'
         .user-signUp__button
           = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn-blue'
-        会員登録とサインインは別ページがよい。
-
-      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = form_for(@user, url: user_session_path) do |f|
+        ログインはこちらから
         .user-signUp__email
           = f.email_field :email, autofocus: true, autocomplete: "email",placeholder: "メールアドレス", class: "input-default"
 
@@ -24,9 +23,9 @@
         .user-login__button
           = f.submit "ログイン", class: "submit"
         .user-login__button
-          = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post, class: "submit"
+          = link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post, class: "submit-sns"
         .user-login__button
-          = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class: "submit"
+          = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class: "submit-sns"
 
 
 = render "shared/footer-sub"
