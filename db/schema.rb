@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< Updated upstream
 
 ActiveRecord::Schema.define(version: 2020_11_04_144514) do
+=======
+ActiveRecord::Schema.define(version: 2020_11_15_134811) do
+>>>>>>> Stashed changes
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
     t.string "zip_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
@@ -76,8 +84,15 @@ ActiveRecord::Schema.define(version: 2020_11_04_144514) do
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
+<<<<<<< Updated upstream
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+=======
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+>>>>>>> Stashed changes
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "ancestry"
@@ -95,7 +110,10 @@ ActiveRecord::Schema.define(version: 2020_11_04_144514) do
     t.integer "birth_year_id", null: false
     t.integer "birth_month_id", null: false
     t.integer "birth_day_id", null: false
+<<<<<<< Updated upstream
     t.string "phone_number", null: false
+=======
+>>>>>>> Stashed changes
     t.string "introduction"
     t.string "icon_image"
     t.string "reset_password_token"

@@ -31,7 +31,7 @@
                   - if @item.persisted?
                     .js-file_group{"data-index" => "#{@item.images.count}"}
                       = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
-                      .js-remove 削除
+                      //.js-remove 削除
 
 
         .products_new-title
