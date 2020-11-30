@@ -78,7 +78,7 @@ $(document).on('turbolinks:load', () => {
         imagePreview(src, file.name, fileIndex, inputNum)
         dataBox.items.add(file)
         $('input[type="file"]').val('');
-        file_field.files = dataBox.files
+        file_field.files = dataBox.file
       };
     });
   });
