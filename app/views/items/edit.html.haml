@@ -19,6 +19,7 @@
                       - @item.images.each_with_index do |image, i|
                         = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
                         .products_edit-preview-box{"data-index" => "#{i}"}
+                          .js-remove 削除
                       .products_edit-upper-box
 
                   = f.fields_for :images do |image|
